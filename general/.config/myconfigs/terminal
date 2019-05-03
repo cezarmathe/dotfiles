@@ -1,0 +1,21 @@
+# Terminal main source file
+
+# Environment variables
+for file in $(ls ~/.config/myconfigs/env) ; do
+    source ~/.config/myconfigs/env/$file
+done
+
+# Aliases
+for file in $(ls ~/.config/myconfigs/alias) ; do
+    source ~/.config/myconfigs/alias/$file
+done
+
+# Functions
+for file in $(ls ~/.config/myconfigs/functions) ; do
+    source ~/.config/myconfigs/functions/$file
+done
+
+# Extras
+for file in $(ls ~/.config/myconfigs/extra) ; do
+    source ~/.config/myconfigs/extra/$file
+done
