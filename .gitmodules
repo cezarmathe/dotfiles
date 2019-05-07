@@ -1,3 +1,6 @@
 [submodule "tmux/.tmux"]
 	path = tmux/.tmux
 	url = git://github.com/gpakosz/.tmux/
+[submodule "zsh/.oh-my-zsh"]
+	path = zsh/.oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
