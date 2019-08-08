@@ -8,3 +8,5 @@
 	program = gpg
 [core]
 	excludesfile = /Users/cezarmathe/.gitignore_global
+[color]
+	ui = true
