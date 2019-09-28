@@ -10,3 +10,5 @@
 	excludesfile = /Users/cezarmathe/.gitignore_global
 [color]
 	ui = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
