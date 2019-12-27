@@ -1,4 +1,4 @@
-
+#!/usr/bin/env bash
 
 # Rust env
 

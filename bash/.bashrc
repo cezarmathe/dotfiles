@@ -8,8 +8,5 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-# source /usr/share/bashmarks/bashmarks.sh
-
 # Terminal
-source ~/.config/myconfigs/terminal
-
+source "${HOME}/.config/termconf/terminal.sh"

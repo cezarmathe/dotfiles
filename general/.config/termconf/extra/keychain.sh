@@ -1,6 +1,8 @@
+#!/usr/bin/env bash
+
 # Keychain SSH keys
 eval $(keychain --agents ssh,gpg -q --eval id_rsa ~/.ssh/id_rsa)
 eval $(keychain --agents ssh,gpg -q --eval github ~/.ssh/github)
 
 # Keychain GPG
-eval $(keychain --agents ssh,gpg -q --eval 61C1AF95BB594AD40DEEB7103F8F89E56422CBA8)
+eval $(keychain --agents ssh,gpg -q --eval F7A4665006757D40230D107A5C6E240A90B96553)
