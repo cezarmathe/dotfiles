@@ -1,0 +1,68 @@
+# My macOS defaults
+
+---
+
+NSGlobalDomain:
+  # Enable subpixel font rendering on non-Apple LCDs
+  AppleFontSmoothing: 2
+  # Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
+  AppleKeyboardUIMode: 3
+  # Always show scrollbars
+  AppleShowScrollBars: Auto
+  # Show all filename extensions in Finder
+  AppleShowAllExtensions: true
+  # Expand save panel by default
+  NSNavPanelExpandedStateForSaveMode: true
+  # Expand print panel by default
+  PMPrintingExpandedStateForPrint: true
+  # Disable press-and-hold for keys in favor of key repeat
+  ApplePressAndHoldEnabled: false
+  # Set a blazingly fast keyboard repeat rate
+  KeyRepeat: 0.75
+  # Set a shorter Delay until key repeat
+  InitialKeyRepeat: 25
+  # Disable auto-correct
+  NSAutomaticSpellingCorrectionEnabled: false
+
+com.apple.dock:
+  # Automatically hide and show the Dock
+  autohide: true
+  # Make Dock icons of hidden applications translucent
+  showhidden: true
+  # Show indicator lights for open applications in the Dock
+  show-process-indicators: true
+
+com.apple.menuextra.battery:
+  # Show remaining battery percentage
+  ShowPercent: YES
+  # Hide remaining battery time
+  ShowTime: NO
+
+com.apple.finder:
+  # Use current directory as default search scope in Finder
+  FXDefaultSearchScope: SCcf
+  # Show Path bar in Finder
+  ShowPathbar: true
+  # Show Status bar in Finder
+  ShowStatusBar: true
+  # Display full POSIX path as Finder window title
+  _FXShowPosixPathInTitle: true
+  # Disable the warning when changing a file extension
+  FXEnableExtensionChangeWarning: false
+
+com.apple.screencapture:
+  # Disable shadow in screenshots
+  disable-shadow: true
+
+com.apple.NetworkBrowser:
+  # Enable AirDrop over Ethernet and on unsupported Macs running Lion
+  BrowseAllInterfaces: true
+
+com.apple.desktopservices:
+  # Avoid creating .DS_Store files on network volumes
+  DSDontWriteNetworkStores: true
+
+com.apple.screensaver:
+  # Require password immediately after sleep or screen saver begins
+  askForPassword: 1
+  askForPasswordDelay: 0
