@@ -8,3 +8,12 @@ indent_style = space
 trim_trailing_whitespace = true
 tab_width = 4
 end_of_line = lf
+
+[*.yml]
+indent_size = 2
+
+[*.json]
+indent_size = 2
+
+[*.toml]
+indent_size = 2
