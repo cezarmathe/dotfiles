@@ -1,0 +1,13 @@
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
+[core]
+	excludesfile = /Users/cezarmathe/.gitignore_global
+	editor = nvim
+[color]
+	ui = true
+[user]
+    email = me@cezarmathe.com
+    name = cezarmathe
+    signingkey = F7A4665006757D40230D107A5C6E240A90B96553
