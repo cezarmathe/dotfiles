@@ -18,9 +18,9 @@ NSGlobalDomain:
   # Disable press-and-hold for keys in favor of key repeat
   ApplePressAndHoldEnabled: false
   # Set a blazingly fast keyboard repeat rate
-  KeyRepeat: 0.75
+  KeyRepeat: 2.5
   # Set a shorter Delay until key repeat
-  InitialKeyRepeat: 25
+  InitialKeyRepeat: 20
   # Disable auto-correct
   NSAutomaticSpellingCorrectionEnabled: false
 
