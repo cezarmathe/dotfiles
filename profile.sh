@@ -23,3 +23,6 @@ printf "%s\n" "Symlinking new profile"
 cd common && stow --dir=. --target=../active .
 cd ..
 cd "profiles/${profile}" && stow --dir=. --target=../../active .
+cd ..
+cd ..
+cd active && stow --dir=. --target="${HOME}" .
