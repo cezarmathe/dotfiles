@@ -16,8 +16,6 @@ source ~/.config/shell/env.sh &> /dev/null
 
 alias gs='git status'
 
-alias ls='ls --color=auto'
-
 alias edit='${EDITOR}'
 
 source ~/.config/shell/alias.sh &> /dev/null
@@ -54,3 +52,5 @@ source ~/.config/shell/functions.sh &> /dev/null
 #############################
 
 source ~/.config/shell/rc.sh &> /dev/null
+
+true
