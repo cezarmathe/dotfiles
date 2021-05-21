@@ -1,0 +1,51 @@
+---
+font:
+  # The normal (roman) font face to use.
+  normal:
+    family: Hack Nerd Font
+    # Style can be specified to pick a specific face.
+    style: Regular
+
+  # The bold font face
+  bold:
+    family: Hack Nerd Font
+    # Style can be specified to pick a specific face.
+    # style: Bold
+
+  # The italic font face
+  italic:
+    family: Hack Nerd Font
+    # Style can be specified to pick a specific face.
+    # style: Italic
+
+# Colors (Material Theme)
+colors:
+  # Default colors
+  primary:
+    background: '#000000'
+    foreground: '#ffffff'
+
+  # Normal colors
+  normal:
+    black:   '#000000'  # Arbitrary
+    red:     '#e53935'
+    green:   '#91b859'
+    yellow:  '#ffb62c'
+    blue:    '#6182b8'
+    magenta: '#ff5370'  # Dark pink of the original material theme
+    cyan:    '#39adb5'
+    white:   '#a0a0a0'  # Arbitrary
+
+  # # Bright colors
+  # bright:
+  #   black:   '#4e4e4e'  # Arbitrary
+  #   red:     '#ff5370'
+  #   green:   '#c3e88d'
+  #   yellow:  '#ffcb6b'
+  #   blue:    '#82aaff'
+  #   magenta: '#f07178'  # Pink of the original material theme
+  #   cyan:    '#89ddff'
+  #   white:   '#ffffff'  # Arbitrary
+
+window:
+  gtk_theme_variant: dark

@@ -1,0 +1,10 @@
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = nvim
+[color]
+	ui = true
+[user]
+    email = me@cezarmathe.com
+    name = cezarmathe
+[init]
+	defaultBranch = main

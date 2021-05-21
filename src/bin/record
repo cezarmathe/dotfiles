@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+wf-recorder -f "${HOME}/Videos/recordings/$(date -u +"%Y_%m_%d-%H_%M_%S").mp4"

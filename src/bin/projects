@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+options=""
+count=0
+
+for file in $(ls ~/Work/Personal); do
+    options="${options} Personal/${file}"
+    count=$((count+1))
+done
+
+for file in $(ls ~/Work/Professional); do
+    options="${options} Professional/${file}"
+    count=$((count+1))
+done
+
+folder=$(for option in ${options[*]}; do printf "%s\n" "${option}"; done | bemenu --fn 'HackNerdFont 12' --prompt 'Projects > ' --no-overlap --list ${count})
+
+if [[ -z "${folder}" ]]; then
+    exit 1
+fi
+code --new-window --folder-uri "file://${HOME}/Work/$folder"
