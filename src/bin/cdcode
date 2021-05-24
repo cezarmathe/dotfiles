@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-cd ~/Work/$(bash -c 'cd Work; for dir in */*; do echo ${dir}; done | fzf')
