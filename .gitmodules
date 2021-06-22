@@ -1,9 +1,3 @@
-[submodule ".tmux"]
-	path = common/.tmux
-	url = https://github.com/gpakosz/.tmux
-[submodule ".oh-my-zsh"]
-	path = common/.oh-my-zsh
-	url = https://github.com/ohmyzsh/ohmyzsh
-[submodule "src/.tmux"]
-	path = src/.tmux
+[submodule "src/@/.tmux"]
+	path = src/@/.tmux
 	url = https://github.com/gpakosz/.tmux.git

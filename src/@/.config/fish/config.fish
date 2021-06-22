@@ -2,14 +2,6 @@
 
 # tvcx's fish configuration
 
-set -g QT_QPA_PLATFORM wayland-egl
-set -g export CLUTTER_BACKEND wayland
-set -g export SDL_VIDEODRIVER wayland
-set -g export MOZ_ENABLE_WAYLAND 1
-set -g export _JAVA_AWT_WM_NONREPARENTING 1
-
-# alias ls='ls --color=auto'
-
 # function reload() {
 #     local shell
 #     shell="${SHELL}"
@@ -39,17 +31,26 @@ set -g export _JAVA_AWT_WM_NONREPARENTING 1
 # 	tar -cjf "${filename}.tar.gz" "${filename}"
 # }
 
+# default editor
 set -g EDITOR "nvim"
+
+# XDG
+
+set -g XDG_DATA_HOME "$HOME/.local/share"
+set -g XDG_CONFIG_HOME "$HOME/.config"
+set -g XDG_CACHE_HOME "$HOME/.cache"
+
+# Go
 
 set -g GOPATH "$HOME/.local/share/go"
 set -g GOBIN "$HOME/.local/share/go/bin"
 set -g GOSRC "$HOME/.local/share/go/src"
 set -g GOPKG "$HOME/.local/share/go/pkg"
 
+# Rust
+
 set -g CARGO_HOME "$HOME/.local/share/cargo"
+set -g RUSTUP_HOME "$HOME/.local/share/rustup"
 
+# path
 set -g PATH "$HOME/bin" "$GOBIN" "$CARGO_HOME/bin" "$PATH"
-
-if test -n "$DESKTOP_SESSION"
-    set -x (gnome-keyring-daemon --start | string split "=")
-end

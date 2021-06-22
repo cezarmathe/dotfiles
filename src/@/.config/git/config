@@ -8,3 +8,6 @@
     name = Armand-Cezar Mathe
 [init]
     defaultBranch = main
+[credential]
+    helper = ~/bin/git-credential-helper
+

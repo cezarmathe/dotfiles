@@ -1,5 +1,5 @@
 #!/usr/bin/env fish
 
 function ls
-    command ls --color=auto $argv
+    command ls --color $argv
 end
