@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+function main() {
+    local filename; filename="$1"; shift
+    tar -cjf "${filename}.tar.gz" "${filename}"
+}
+
+main $@
