@@ -1,7 +1,22 @@
 #!/usr/bin/env bash
 
+TARGZ_HELP="targz <filename>
+
+    Add <filename> to a <filename>.tar.gz archive.
+"
+
+function print_help() {
+    printf "%s" "${TARGZ_HELP}"
+}
+
 function main() {
     local filename; filename="$1"; shift
+
+    if [[ -z "${filename}" ]]; then
+        print_help
+        exit 1
+    fi
+
     tar -cjf "${filename}.tar.gz" "${filename}"
 }
 
