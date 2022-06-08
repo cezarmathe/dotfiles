@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# projects
+
+cd ~/code
+for dir in */*; do echo ${dir}; done | fzf

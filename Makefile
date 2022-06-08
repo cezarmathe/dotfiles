@@ -3,13 +3,13 @@
 SHELL = /bin/bash
 
 do:
-	./scripts/symlinks.sh src
+	cd src && stow -d . -t $$HOME -S .; cd -
 .PHONY: do
 
 undo:
-	./scripts/symlinks.sh src -D
+	cd src && stow -d . -t $HOME -D .; cd -
 .PHONY: undo
 
 redo:
-	./scripts/symlinks.sh src -R
+	cd src && stow -d . -t $HOME -R .; cd -
 .PHONY: redo

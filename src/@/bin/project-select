@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-# projects
-
-cd ~/Work
-for dir in */*; do echo ${dir}; done | fzf

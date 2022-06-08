@@ -1,0 +1,13 @@
+[core]
+    excludesfile = ~/.config/git/gitignore
+    editor       = nvim
+[color]
+    ui = true
+[user]
+    email = me@cezarmathe.com
+    name  = Armand-Cezar Mathe
+[init]
+    defaultBranch = main
+#[credential]
+#    helper = ~/bin/git-credential-helper
+
