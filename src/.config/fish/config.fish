@@ -58,3 +58,5 @@ set -gx PATH "$HOME/.local/bin" "$GOBIN" "$CARGO_HOME/bin" "$PATH"
 if test -z $DISPLAY; and test (tty) = "/dev/tty1"
     exec sway
 end
+
+alias bazel bazelisk

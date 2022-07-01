@@ -11,6 +11,8 @@
 " We set it explicitely to make our position clear!
 set nocompatible
 
+syntax on
+
 " Put all temporary files under the same directory.
 " https://github.com/mhinz/vim-galore#temporary-files
 set backup
@@ -42,6 +44,13 @@ Plug 'tpope/vim-sensible'
 Plug 'sheerun/vim-polyglot'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/syntastic'
+Plug 'valloric/youcompleteme'
+Plug 'majutsushi/tagbar'
 
 call plug#end()
 
@@ -90,5 +99,19 @@ call plug#end()
 "endif
 
 " cezar's config
+syntax on
 set cursorline
 set number
+
+" https://jeffkreeftmeijer.com/vim-number/
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+    autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
+
+" Taken from https://github.com/rust-lang/rust.vim/issues/130
+let g:syntastic_rust_rustc_exe = 'cargo clippy'
+let g:syntastic_rust_rustc_fname = ''
+let g:syntastic_rust_rustc_args = '--'
+let g:syntastic_rust_checkers = ['rustc']
