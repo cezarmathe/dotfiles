@@ -51,6 +51,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/syntastic'
 Plug 'valloric/youcompleteme'
 Plug 'majutsushi/tagbar'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -115,3 +117,8 @@ let g:syntastic_rust_rustc_exe = 'cargo clippy'
 let g:syntastic_rust_rustc_fname = ''
 let g:syntastic_rust_rustc_args = '--'
 let g:syntastic_rust_checkers = ['rustc']
+
+nmap <C-b> :NERDTreeToggle<CR>
+nmap <C-f> :Files<CR>
+nmap <C-f> :Files<CR>
+nmap <S-f> :Rg<CR>

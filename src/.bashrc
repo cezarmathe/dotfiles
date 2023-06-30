@@ -33,5 +33,12 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 if [ -z $DISPLAY ] && [ "$(tty)" == "/dev/tty1" ]; then
-    exec sway
+  exec sway
 fi
+
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m --height 50% --border'
+fi
+
+eval "$(direnv hook bash)"

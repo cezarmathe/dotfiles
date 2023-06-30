@@ -60,3 +60,5 @@ if test -z $DISPLAY; and test (tty) = "/dev/tty1"
 end
 
 alias bazel bazelisk
+
+eval (direnv hook fish)

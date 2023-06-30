@@ -29,7 +29,7 @@ function gp
 end
 
 function gpo
-    command git push --set-upstream origin $argv
+    command git push --set-upstream origin (git branch --show-current)
 end
 
 function gs
