@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+git branch | fzf -m | tr -d ' ' | xargs git branch -D

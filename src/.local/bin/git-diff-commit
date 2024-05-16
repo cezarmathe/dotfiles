@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+COMMIT="$(git select-commit)"
+exec git difftool "${COMMIT}~" $"${COMMIT}" @
+

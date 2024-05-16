@@ -20,3 +20,15 @@
 .old
 
 .envrc
+
+# Cloud credentials and configuration
+.aws
+.gcloud
+
+.ctags
+.ctags.gen
+
+*.log
+
+# .ignore directories for temporarily hiding something.
+.ignore

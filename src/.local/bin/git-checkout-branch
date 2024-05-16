@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+git select-branch | xargs git checkout

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+MAIN="$(git config --get init.defaultBranch)"
+
+exec git checkout "${MAIN}"
