@@ -1,0 +1,3 @@
+#!/usr/bin/env fish
+
+$EDITOR $HOME/notes/(date "+%Y-%m-%d-%H-%M-%S").md

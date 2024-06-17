@@ -32,7 +32,8 @@
 # }
 
 # default editor
-set -g EDITOR "vim"
+set -g EDITOR "nvim"
+set -g VISUAL "nvim"
 
 # XDG
 
@@ -60,5 +61,6 @@ if test -z $DISPLAY; and test (tty) = "/dev/tty1"
 end
 
 alias bazel bazelisk
+alias vim nvim
 
 eval (direnv hook fish)

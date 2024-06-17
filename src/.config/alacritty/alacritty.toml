@@ -1,0 +1,28 @@
+[colors.normal]
+black = "#000000"
+blue = "#6182b8"
+cyan = "#39adb5"
+green = "#91b859"
+magenta = "#ff5370"
+red = "#e53935"
+white = "#a0a0a0"
+yellow = "#ffb62c"
+
+[colors.primary]
+background = "#000000"
+foreground = "#ffffff"
+
+[font]
+size = 14
+
+[font.bold]
+family = "Hack Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "Hack Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Regular"

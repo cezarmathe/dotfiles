@@ -4,15 +4,9 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-# Font
-font pango:Hack Nerd Font Regular 11
-
-# Wallpaper
-set $wallpaper /home/kiwi/Pictures/penguins-wallpaper.jpg
-
 ### Variables
 #
-# Logo key. Use Mod1 for Alt. Mod4 is command.
+# Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
 set $left h
@@ -20,39 +14,43 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
+#set $term foot
 set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu BEMENU_BACKEND=wayland bemenu-run --prompt "Run > " --fn 'HackNerdFont 12' -n | xargs swaymsg exec -- 
+#set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu dmenu_path | wmenu | xargs swaymsg exec --
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $wallpaper fill
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * scale 1.5
 #
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-output * scale 2
 
 ### Idle configuration
 #
 # Example configuration:
 #
-set $swaylock_command 'swaylock -f -c 000000 -i $wallpaper --font HackNerdFont'
-exec swayidle -w \
-          timeout 300 $swaylock_command \
-          timeout 330 'swaymsg "output * dpms off"' \
-               resume 'swaymsg "output * dpms on"' \
-          before-sleep $swaylock_command
-bindsym $mod+End exec $swaylock_command
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#          before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+
+#exec swayidle -w \
+#         timeout 60 'swaylock -f -c 000000' \
+#         timeout 120 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#         before-sleep 'swaylock -f -c 000000'
 
 ### Input configuration
 #
@@ -67,8 +65,23 @@ bindsym $mod+End exec $swaylock_command
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-input "8250:65532:Parallels_Virtual_Mouse" {
-    scroll_factor 0.2
+
+#input "1452:613:Apple_Inc._Magic_Trackpad" {
+#	dwt enabled
+#	tap disabled
+#	natural_scroll enabled
+#	middle_emulation enabled
+#	accel_profile adaptive
+#	pointer_accel 0 
+#	scroll_factor 0.15
+#}
+
+input "1133:16495:Logitech_MX_Ergo" {
+	accel_profile adaptive
+	dwt enabled
+	natural_scroll enabled
+	pointer_accel -0.6
+	scroll_factor 0.75
 }
 
 ### Key bindings
@@ -76,13 +89,13 @@ input "8250:65532:Parallels_Virtual_Mouse" {
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+t exec $term
+    bindsym $mod+Return exec $term
 
     # Kill focused window
     bindsym $mod+q kill
 
     # Start your launcher
-    bindsym $mod+Shift+s exec $menu
+    bindsym $mod+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -95,7 +108,7 @@ input "8250:65532:Parallels_Virtual_Mouse" {
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -124,27 +137,27 @@ input "8250:65532:Parallels_Virtual_Mouse" {
 # Workspaces:
 #
     # Switch to workspace
-    bindsym $mod+1 workspace 1
-    bindsym $mod+2 workspace 2
-    bindsym $mod+3 workspace 3
-    bindsym $mod+4 workspace 4
-    bindsym $mod+5 workspace 5
-    bindsym $mod+6 workspace 6
-    bindsym $mod+7 workspace 7
-    bindsym $mod+8 workspace 8
-    bindsym $mod+9 workspace 9
-    bindsym $mod+0 workspace 10
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace number 10
     # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace 1
-    bindsym $mod+Shift+2 move container to workspace 2
-    bindsym $mod+Shift+3 move container to workspace 3
-    bindsym $mod+Shift+4 move container to workspace 4
-    bindsym $mod+Shift+5 move container to workspace 5
-    bindsym $mod+Shift+6 move container to workspace 6
-    bindsym $mod+Shift+7 move container to workspace 7
-    bindsym $mod+Shift+8 move container to workspace 8
-    bindsym $mod+Shift+9 move container to workspace 9
-    bindsym $mod+Shift+0 move container to workspace 10
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #
@@ -168,7 +181,7 @@ input "8250:65532:Parallels_Virtual_Mouse" {
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+Alt+space focus mode_toggle
+    bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -215,29 +228,17 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     swaybar_command waybar
-    # position top
+    position top
 
-    # # When the status_command prints a new line to stdout, swaybar updates.
-    # # The default just shows the current date and time.
-    # status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
 
-    # colors {
-    #     statusline #ffffff
-    #     background #323232
-    #     inactive_workspace #32323200 #32323200 #5c5c5c
-    # }
-
+    colors {
+        statusline #ffffff
+        background #323232
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
 }
-
-# Screenshotting
-set $screenshots_dir /home/cezarmathe//Pictures
-set $screen_recordings_dir /home/cezarmathe/Videos
-
-bindsym --release Print exec grim "$screenshots_dir/screenshot_$(date -u +"%Y-%m-%d_%H:%M:%S").png"
-bindsym --release Ctrl+Print exec grim -g "$(slurp)" "$screenshots_dir/screenshot_$(date -u +"%Y-%m-%d_%H:%M:%S").png"
-bindsym --release Shift+Print exec grim - | wl-copy
-bindsym --release Ctrl+Shift+Print exec grim -g "$(slurp)" - | wl-copy
-#bindsym --release Alt+Print exec grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')" "$screenshots_dir/screenshot_$(date -u +"%Y-%m-%d_%H:%M:%S")"
-#bindsym --release Alt+Shift+Print exec grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | wl-copy
 
 include /etc/sway/config.d/*
