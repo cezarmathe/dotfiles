@@ -646,8 +646,14 @@ require("lazy").setup({
 
     -- NOTE: added by @cezarmathe
     {
-        "nvim-telescope/telescope-file-browser.nvim",
-        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+            -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+        },
     },
 
     { -- Autoformat
@@ -938,8 +944,7 @@ require("lazy").setup({
     },
 })
 
--- NOTE: added by @cezarmathe
-vim.keymap.set("n", "<space>fb", ":Telescope file_browser<CR>")
+vim.keymap.set("n", "<leader>fs", ":Neotree toggle left<CR>", { desc = "[F]ile [S]ystem" })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

@@ -80,7 +80,7 @@ input "1133:16495:Logitech_MX_Ergo" {
 	accel_profile adaptive
 	dwt enabled
 	natural_scroll enabled
-	pointer_accel -0.6
+	pointer_accel -0.75
 	scroll_factor 0.75
 }
 
